@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="stylesheet/style.css" />
+  </head>
+
+  <body>
+    <div
+      class="fixed hidden z-1 top-0 backdrop w-screen h-screen bg-black opacity-80"
+    ></div>
+    <div class="card-wrapper">
+      <!-- Navigation Section -->
+      <nav class="nav-section">
+        <div class="mt-7 ml-5 mr-5 mb-10">
+          <!-- Logo and Navigation Links -->
+          <div class="flex justify-between items-center">
+            <div class="ml-5 flex items-center">
+              <img src="./images/logo.svg" alt="Logo" class="h-8" />
+              <div class="ul-container hidden md:flex">
+                <div class="relative mr-5 ml-5">
+                  <button>
+                    <span class="text-[18px] text-gray-500">Features</span>
+                    <span
+                      ><i class="fa-solid fa-chevron-down arrow-key"></i
+                    ></span>
+                  </button>
+
+                  <div
+                    class="features-items absolute hidden justify-center w-[120px] right-4 top-9 text-black p-2 shadow-lg rounded-md"
+                  >
+                    <ul>
+                      <li class="flex items-center text-[12px] mb-2">
+                        <img
+                          class="mr-4"
+                          src="./images/icon-todo.svg"
+                          alt=""
+                        />Todo List
+                      </li>
+                      <li class="flex items-center text-[12px] mb-2">
+                        <img
+                          class="mr-4"
+                          src="./images/icon-calendar.svg"
+                          alt=""
+                        />Calender
+                      </li>
+                      <li class="flex items-center text-[12px] mb-2">
+                        <img
+                          class="mr-4"
+                          src="./images/icon-reminders.svg"
+                          alt=""
+                        />Reminders
+                      </li>
+                      <li class="flex items-center text-[12px]">
+                        <img
+                          class="mr-4"
+                          src="./images/icon-planning.svg"
+                          alt=""
+                        />
+                        Planning
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="relative mr-5">
+                  <button>
+                    <span class="text-[18px] text-gray-500">Company</span>
+                    <span
+                      ><i class="fa-solid fa-chevron-down arrow-key"></i
+                    ></span>
+                  </button>
+
+                  <div
+                    class="company-items absolute bg-white text-black shadow-lg p-3 rounded-md hidden"
+                  >
+                    <ul>
+                      <li class="text-[12px] mb-2">History</li>
+                      <li class="text-[12px] mb-2">Our Team</li>
+                      <li class="text-[12px]">Blog</li>
+                    </ul>
+                  </div>
+                </div>
+                <a class="mr-5 text-[18px] text-gray-500" href="">Careers</a>
+                <a class="mr-5 text-[18px] text-gray-500" href="">About</a>
+              </div>
+            </div>
+
+            <!-- Login and Register Links -->
+            <div>
+              <ul class="hidden md:flex space-x-4">
+                <li><a href="">Login</a></li>
+                <li>
+                  <a
+                    href=""
+                    class="border border-black rounded-[10px] px-4 py-2"
+                    >Register</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Menu Button (for mobile) -->
+            <button
+              id="menu-btn"
+              class="block hamburger md:hidden focus:outline-none"
+            >
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dropdown Menu (for mobile) -->
+        <div
+          id="menu"
+          class="fixed hidden px-5 py-6 z-2 w-[250px] h-screen bg-white top-0 right-0 drop-shadow-md md:hidden"
+        >
+          <div class="flex justify-end w-full">
+            <button>
+              <i class="fa-solid fa-xmark text-[35px] menu-btn-close"></i>
+            </button>
+          </div>
+
+          <!-- <div
+            id="menu"
+            class="container-menu w-full hidden flex-col items-start self-end py-8 font-bold gap-5 px-6 sm:w-auto sm:self-center"
+          > -->
+          <div class="flex flex-col gap-5">
+            <div class="space-y-3">
+              <button>
+                <span class="mr-2">Features</span>
+                <span
+                  ><i class="fa-solid fa-chevron-down text-[10px] arrow-key"></i
+                ></span>
+              </button>
+
+              <ul class="hidden px-6 text-[14px] features-items">
+                <li class="flex gap-3">
+                  <img src="./images/icon-todo.svg" alt="" />Todo list
+                </li>
+                <li class="flex gap-3">
+                  <img src="./images/icon-calendar.svg" alt="" />Calendar
+                </li>
+                <li class="flex gap-3">
+                  <img src="./images/icon-reminders.svg" alt="" />Reminders
+                </li>
+                <li class="flex gap-3">
+                  <img src="./images/icon-planning.svg" alt="" />Planning
+                </li>
+              </ul>
+            </div>
+
+            <div class="space-y-3">
+              <button>
+                <span class="mr-2">Company</span>
+                <span
+                  ><i class="fa-solid fa-chevron-down text-[10px] arrow-key"></i
+                ></span>
+              </button>
+
+              <ul class="px-6 text-[14px] company-items hidden">
+                <li class="flex gap-3">History</li>
+                <li class="flex gap-3">Our Team</li>
+                <li class="flex gap-3">Blog</li>
+              </ul>
+            </div>
+
+            <a class="" href="#">Careers</a>
+            <a class="" href="#">About</a>
+
+            <div
+              class="flex flex-col mt-8 justify-center items-center w-[200px] text-center mx-auto"
+            >
+              <a class="mb-[20px]" href="#">Login</a>
+              <a
+                class="mb-[20px] w-[200px] border border-black rounded-md p-3"
+                href="#"
+                >Register</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section>
+        <div class="home-section">
+          <div
+            class="flex flex-col-reverse md:flex-row md:w-full ml-5 md:justify-center items-center"
+          >
+            <div class="text-start mr-9 mb-9 md:w-[520px]">
+              <h1 class="text-5xl font-bold mb-7 mt-20">
+                <span class="block">Make</span>
+                <span class="block">Remote Work</span>
+              </h1>
+
+              <p class="md:w-[350px] text-[20px] text-gray-400 mb-12">
+                Get your team in sync. No matter your location, streamline
+                processes, create team rituals, and watch productivity soar.
+              </p>
+
+              <div class="flex justify-center md:justify-start">
+                <a
+                  class="text-[15px] p-4 font-semibold bg-black text-white rounded-[6px]"
+                  href=""
+                  >Learn more</a
+                >
+              </div>
+            </div>
+            <div class="md:w-[500px]">
+              <img
+                src="./images/image-hero-mobile.png"
+                alt="Hero Image"
+                class="md:hidden"
+              />
+              <img
+                src="./images/image-hero-desktop.png"
+                alt=""
+                class="hidden md:inline"
+              />
+            </div>
+          </div>
+          <div
+            class="flex gap-4 py-4 md:justify-start md:px-40 sm:justify-center md:flex"
+          >
+            <span><img src="./images/client-databiz.svg" alt="" /></span>
+            <span><img src="./images/client-audiophile.svg" alt="" /></span>
+            <span><img src="./images/client-meet.svg" alt="" /></span>
+            <span><img src="./images/client-maker.svg" alt="" /></span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./script/script.js"></script>
+  </body>
+</html>

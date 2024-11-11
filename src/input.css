@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: black;
+  height: 2px;
+  width: 24px;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+/* 
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+} */
+
+/* Base styles */
+.nav-section {
+  position: relative;
+}
+
+/* For the hamburger button */
+.hamburger {
+  cursor: pointer;
+}
+
+/* For the dropdown menu */
+.container-menu {
+  /* height: 100vh; */
+  /* background-color: white; */
+  padding-top: 20px;
+  /* display: flex; */
+  flex-direction: column;
+  /* align-items: center; */
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  text-align: start;
+}
+
+@media only screen and(max-width: 500px) {
+  .ul-container {
+    display: none;
+  }
+}
+
+option,
+select {
+  font-size: 12px;
+}
+
+option {
+  width: 200px;
+  padding: 10px;
+}
